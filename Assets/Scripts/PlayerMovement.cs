@@ -11,18 +11,30 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float acceleration = 2f; // acceleration speed
     private bool isJumping = false;
     private bool canJump = true;
+    private bool canCheck = true;
+    private BoxCollider2D boxCollider2D;
     [SerializeField] private int jumpCount = 0;
     private float coyoteTimer;
     private Rigidbody2D rb;
 
     void Start()
     {
+        boxCollider2D = transform.GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        GroundCheck();
+        if (IsGrounded() == true)
+        {
+            isJumping = false;
+            canJump = true;
+            if (jumpCount != 0)
+            {
+                jumpCount = 0;
+            }
+        }
+
         float moveX = Input.GetAxisRaw("Horizontal");
         if (moveX != 0)
         {
@@ -40,7 +52,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && canJump && jumpCount < 2)
         {
-            jumpCount++;
+
+
             if (isJumping)
             {
                 // peak jump
@@ -62,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = true;
                 canJump = false;
             }
+            jumpCount++;
         }
         if (!isJumping)
         {
@@ -72,23 +86,28 @@ public class PlayerMovement : MonoBehaviour
         {
             canJump = true;
         }
-
-
     }
-
-    private void OnDrawGizmos()
+    private bool IsGrounded()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y + 0.5f));
-    }
-    void GroundCheck()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, LayerMask.GetMask("Ground"));
+        RaycastHit2D hit = Physics2D.Raycast(boxCollider2D.bounds.center, Vector2.down, boxCollider2D.bounds.extents.y + .01f, LayerMask.GetMask("Ground"));
+        Color rayColor;
+        
         if (hit.collider != null)
         {
-            isJumping = false;
-            canJump = true;
-            jumpCount = 0;
+            rayColor = Color.green;
+            //isJumping = false;
+            //canJump = true;
+            //jumpCount = 0;
         }
+        else
+        {
+            rayColor = Color.red;
+        }
+        
+        Debug.DrawRay(transform.position, Vector2.down * (boxCollider2D.bounds.extents.y + .01f), rayColor);
+        return hit.collider != null;
+
     }
 }
+
+
