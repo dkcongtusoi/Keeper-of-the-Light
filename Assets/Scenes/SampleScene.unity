@@ -137,9 +137,9 @@ GameObject:
   - component: {fileID: 198342302}
   - component: {fileID: 198342306}
   - component: {fileID: 198342305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3235,7 +3235,6 @@ GameObject:
   - component: {fileID: 546738666}
   - component: {fileID: 546738665}
   - component: {fileID: 546738664}
-  - component: {fileID: 546738668}
   - component: {fileID: 546738669}
   - component: {fileID: 546738670}
   m_Layer: 0
@@ -3359,24 +3358,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &546738668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546738663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b0e20f3a4c2cc4f825c4dd9070a049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 5
-  coyoteTime: 0.1
-  friction: 0.9
-  acceleration: 2
-  jumpCount: 0
 --- !u!95 &546738669
 Animator:
   serializedVersion: 5
@@ -8790,24 +8771,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1768462869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6323719954831660462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b0e20f3a4c2cc4f825c4dd9070a049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpForce: 14
-  coyoteTime: 0.1
-  friction: 0.9
-  acceleration: 0.2
-  jumpCount: 0
 --- !u!1 &111755812420538429
 GameObject:
   m_ObjectHideFlags: 0
@@ -8953,7 +8916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111755812420538429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.06, z: 0}
+  m_LocalPosition: {x: -0.147, y: 0.163, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9020,7 +8983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7967423530921722379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.378, y: 1.15, z: 0}
+  m_LocalPosition: {x: -0.658, y: 1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9100,7 +9063,7 @@ GameObject:
   - component: {fileID: 2954181337756413457}
   - component: {fileID: 8942925491976547483}
   - component: {fileID: 9117128349956217016}
-  - component: {fileID: 1768462869}
+  - component: {fileID: 9117128349956217017}
   m_Layer: 0
   m_Name: HeroKnight
   m_TagString: Player
@@ -9146,7 +9109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7087049455938079729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.375, y: 1.15, z: 0}
+  m_LocalPosition: {x: 0.504, y: 1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9179,7 +9142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6323719954831660462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.81, y: 0.74, z: 0}
+  m_LocalPosition: {x: 12.26, y: -0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9223,9 +9186,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.5
+  m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 4
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -9279,7 +9242,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.7234529}
+  m_Offset: {x: -0.14885664, y: 1.1975818}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -9290,5 +9253,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.73, y: 1.0770943}
+  m_Size: {x: 1.5717535, y: 1.9410625}
   m_EdgeRadius: 0
+--- !u!114 &9117128349956217017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6323719954831660462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b25879a85aef4049811869e47d814b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data: {fileID: 11400000, guid: c70234aada1afda418a3986ba478501f, type: 2}
+  _groundCheckPoint: {fileID: 2900218874284159078}
+  _groundCheckSize: {x: 1.46, y: 0.06}
+  _frontWallCheckPoint: {fileID: 7646082783795524697}
+  _backWallCheckPoint: {fileID: 3233824456684662141}
+  _wallCheckSize: {x: 0.14, y: 1.6}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
